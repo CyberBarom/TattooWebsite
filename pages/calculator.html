@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Tattoo Studio — Configurador</title>
+
+    <link
+        rel="stylesheet"
+        href="../css/global.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/calculator.css"
+    >
+
+</head>
+
+
+<body>
+
+<main class="calculator-page">
+
+
+    <!-- =========================================
+         HEADER
+    ========================================== -->
+
+    <header class="calculator-header">
+
+        <a
+            href="../index.html"
+            class="back-link"
+        >
+            ← Volver
+        </a>
+
+        <div class="header-content">
+
+            <span class="eyebrow">
+                TATTOO CONFIGURATOR
+            </span>
+
+            <h1>
+                Diseña tu tatuaje
+            </h1>
+
+            <p>
+                Selecciona una zona del cuerpo,
+                sube tu diseño y visualiza cómo
+                quedaría antes de solicitar tu cita.
+            </p>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =========================================
+         MAIN
+    ========================================== -->
+
+    <section class="calculator-layout">
+
+
+        <!-- =====================================
+             LOCATION
+        ====================================== -->
+
+        <div class="body-panel">
+
+            <div class="panel-heading">
+
+                <span>
+                    01
+                </span>
+
+                <div>
+
+                    <h2>
+                        Ubicación
+                    </h2>
+
+                    <p>
+                        Selecciona directamente sobre el cuerpo
+                        dónde quieres colocar tu tatuaje.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- FRONT / BACK -->
+
+            <div class="view-switcher">
+
+                <button
+                    type="button"
+                    id="frontButton"
+                    class="view-button active"
+                >
+                    Frente
+                </button>
+
+                <button
+                    type="button"
+                    id="backButton"
+                    class="view-button"
+                >
+                    Espalda
+                </button>
+
+            </div>
+
+
+
+            <!-- =================================
+                 LOCATION WORKSPACE
+            ================================== -->
+
+            <div
+                id="locationWorkspace"
+                class="location-workspace"
+            >
+
+
+                <!-- =================================
+                     BODY SELECTOR
+                ================================== -->
+
+                <div
+                    id="bodySelectionArea"
+                    class="body-selection-area"
+                >
+
+                    <div class="body-selection-title">
+
+                        <span>
+                            SELECCIONA
+                        </span>
+
+                        <strong>
+                            Parte del cuerpo
+                        </strong>
+
+                    </div>
+
+
+                    <div class="body-wrapper">
+
+                        <div class="body-svg-container">
+
+                            <object
+                                id="bodyFront"
+                                class="body-svg active"
+                                data="../assets/body/body-front.svg"
+                                type="image/svg+xml"
+                                aria-label="Cuerpo humano vista frontal"
+                            ></object>
+
+
+                            <object
+                                id="bodyBack"
+                                class="body-svg"
+                                data="../assets/body/body-back.svg"
+                                type="image/svg+xml"
+                                aria-label="Cuerpo humano vista trasera"
+                            ></object>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="body-selection-help">
+
+                        <span>
+                            Haz clic sobre la zona
+                        </span>
+
+                        <small>
+                            Brazo · Antebrazo · Pecho ·
+                            Espalda · Muslo · Pantorrilla
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================
+                     LIVE PREVIEW
+                ================================== -->
+
+                <div
+                    id="locationLivePreview"
+                    class="location-live-preview"
+                >
+
+                    <div class="live-preview-heading">
+
+                        <span>
+                            LIVE PREVIEW
+                        </span>
+
+                        <strong id="selectedZoneLarge">
+                            Selecciona una zona
+                        </strong>
+
+                    </div>
+
+
+
+                    <div class="live-preview-content">
+
+
+                        <!-- =================================
+                             ZOOM
+                        ================================== -->
+
+                        <div class="tattoo-canvas-card">
+
+                            <div class="canvas-header">
+
+                                <span>
+                                    VISTA AMPLIADA
+                                </span>
+
+                                <span id="canvasZoneName">
+                                    —
+                                </span>
+
+                            </div>
+
+
+                            <div
+                                id="tattooCanvas"
+                                class="tattoo-canvas"
+                            >
+
+
+                                <!-- ZONE -->
+
+                                <div
+                                    id="zonePreview"
+                                    class="zone-preview"
+                                ></div>
+
+
+
+                                <!-- EMPTY -->
+
+                                <div
+                                    id="canvasEmpty"
+                                    class="canvas-empty"
+                                >
+
+                                    <span>
+                                        ◌
+                                    </span>
+
+                                    <strong>
+                                        Selecciona una zona
+                                    </strong>
+
+                                    <small>
+                                        La zona seleccionada
+                                        aparecerá ampliada aquí.
+                                    </small>
+
+                                </div>
+
+
+
+                                <!-- TATTOO -->
+
+                                <div
+                                    id="tattooObject"
+                                    class="tattoo-object"
+                                >
+
+                                    <img
+                                        id="editorTattooImage"
+                                        src=""
+                                        alt="Diseño del tatuaje"
+                                        draggable="false"
+                                    >
+
+
+                                    <div
+                                        class="resize-handle resize-nw"
+                                        data-handle="nw"
+                                    ></div>
+
+                                    <div
+                                        class="resize-handle resize-ne"
+                                        data-handle="ne"
+                                    ></div>
+
+                                    <div
+                                        class="resize-handle resize-sw"
+                                        data-handle="sw"
+                                    ></div>
+
+                                    <div
+                                        class="resize-handle resize-se"
+                                        data-handle="se"
+                                    ></div>
+
+                                </div>
+
+                            </div>
+
+                            <!-- =================================
+                                ROTATION CONTROLS
+                            ================================== -->
+
+                            <div class="rotation-controls">
+
+                                <span class="rotation-label">
+                                    ROTACIÓN
+                                </span>
+
+                                <div class="rotation-control-row">
+
+                                    <button
+                                        type="button"
+                                        id="rotateLeftButton"
+                                        class="rotation-button"
+                                    >
+                                        ↺
+                                    </button>
+
+
+                                    <div class="rotation-value">
+                                        <strong id="rotationValue">
+                                            0°
+                                        </strong>
+
+                                        <small>
+                                            Ángulo
+                                        </small>
+                                    </div>
+
+
+                                    <button
+                                        type="button"
+                                        id="rotateRightButton"
+                                        class="rotation-button"
+                                    >
+                                        ↻
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                            <div class="canvas-controls">
+
+                                <span>
+                                    Arrastra el tattoo para moverlo
+                                </span>
+
+                                <span>
+                                    Esquina para cambiar tamaño
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =====================================
+             OPTIONS
+        ====================================== -->
+
+        <aside class="options-panel">
+
+
+            <!-- =================================
+                 DESIGN
+            ================================== -->
+
+            <section class="option-section">
+
+                <div class="section-title">
+
+                    <span class="section-number">
+                        02
+                    </span>
+
+                    <div>
+
+                        <h2>
+                            Tu diseño
+                        </h2>
+
+                        <p>
+                            Sube una imagen de referencia
+                            para visualizarla sobre la zona.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <label
+                    for="tattooImage"
+                    id="uploadArea"
+                    class="upload-area"
+                >
+
+                    <div
+                        id="uploadPlaceholder"
+                        class="upload-placeholder"
+                    >
+
+                        <span class="upload-icon">
+                            +
+                        </span>
+
+                        <strong>
+                            Subir diseño
+                        </strong>
+
+                        <small>
+                            PNG, JPG o WEBP
+                        </small>
+
+                    </div>
+
+
+                    <img
+                        id="imagePreview"
+                        class="image-preview"
+                        src=""
+                        alt="Vista previa del tattoo"
+                    >
+
+                </label>
+
+
+                <input
+                    id="tattooImage"
+                    type="file"
+                    accept="image/png,image/jpeg,image/webp"
+                    hidden
+                >
+
+
+                <div
+                    id="designActions"
+                    class="design-actions"
+                >
+
+                    <button
+                        type="button"
+                        id="changeTattooButton"
+                        class="design-action"
+                    >
+                        Cambiar imagen
+                    </button>
+
+
+                    <button
+                        type="button"
+                        id="removeTattooButton"
+                        class="design-action danger"
+                    >
+                        Eliminar
+                    </button>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================
+                 SIZE
+            ================================== -->
+
+            <section class="option-section">
+
+                <div class="section-title">
+
+                    <span class="section-number">
+                        03
+                    </span>
+
+                    <div>
+
+                        <h2>
+                            Tamaño
+                        </h2>
+
+                        <p>
+                            Se calcula automáticamente
+                            según el tamaño del diseño.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="measurement-grid">
+
+                    <div>
+
+                        <span>
+                            Ancho
+                        </span>
+
+                        <strong id="tattooWidth">
+                            —
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Alto
+                        </span>
+
+                        <strong id="tattooHeight">
+                            —
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="size-category">
+
+                    <span>
+                        Categoría
+                    </span>
+
+                    <strong id="tattooCategory">
+                        —
+                    </strong>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================
+                 PRICE
+            ================================== -->
+
+            <section class="price-section">
+
+                <span class="price-label">
+                    Precio estimado
+                </span>
+
+                <div
+                    id="price"
+                    class="price"
+                >
+                    $150
+                </div>
+
+                <p>
+                    El precio final puede variar según
+                    complejidad, detalles y valoración
+                    del tatuador.
+                </p>
+
+            </section>
+
+
+
+            <!-- =================================
+                 APPOINTMENT
+            ================================== -->
+
+            <button
+                type="button"
+                id="appointmentButton"
+                class="appointment-button"
+            >
+
+                Solicitar cita
+
+                <span>
+                    →
+                </span>
+
+            </button>
+
+        </aside>
+
+    </section>
+
+</main>
+
+
+
+<!-- =========================================
+     JAVASCRIPT
+========================================= -->
+
+<script src="../js/pricing.js"></script>
+
+<script src="../js/calculator.js"></script>
+
+<script src="../js/tattoo-editor.js"></script>
+
+</body>
+
+</html>

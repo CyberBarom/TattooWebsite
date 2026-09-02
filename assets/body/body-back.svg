@@ -1,0 +1,434 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 500 900"
+    role="img"
+    aria-labelledby="bodyTitle bodyDescription"
+>
+
+    <title id="bodyTitle">
+        Cuerpo humano — vista trasera
+    </title>
+
+    <desc id="bodyDescription">
+        Selector interactivo de zonas del cuerpo para visualizar un tatuaje.
+    </desc>
+
+
+    <!-- ==================================================
+         DEFINITIONS
+    ================================================== -->
+
+    <defs>
+
+        <linearGradient
+            id="bodyGradientBack"
+            x1="0"
+            y1="0"
+            x2="1"
+            y2="1"
+        >
+
+            <stop
+                offset="0%"
+                stop-color="#e9e1d5"
+                stop-opacity="0.10"
+            />
+
+            <stop
+                offset="50%"
+                stop-color="#c9bfb1"
+                stop-opacity="0.055"
+            />
+
+            <stop
+                offset="100%"
+                stop-color="#81786d"
+                stop-opacity="0.025"
+            />
+
+        </linearGradient>
+
+
+        <linearGradient
+            id="selectedGradientBack"
+            x1="0"
+            y1="0"
+            x2="1"
+            y2="1"
+        >
+
+            <stop
+                offset="0%"
+                stop-color="#ead39b"
+                stop-opacity="0.34"
+            />
+
+            <stop
+                offset="100%"
+                stop-color="#d6b36a"
+                stop-opacity="0.16"
+            />
+
+        </linearGradient>
+
+    </defs>
+
+
+    <!-- ==================================================
+         HEAD
+    ================================================== -->
+
+    <ellipse
+        cx="250"
+        cy="82"
+        rx="43"
+        ry="55"
+        fill="url(#bodyGradientBack)"
+        stroke="#77716a"
+        stroke-width="2"
+        opacity="0.95"
+    />
+
+
+    <!-- ==================================================
+         NECK
+    ================================================== -->
+
+    <path
+        d="
+            M225 125
+            L225 155
+            L275 155
+            L275 125
+        "
+        fill="url(#bodyGradientBack)"
+        stroke="#77716a"
+        stroke-width="2"
+    />
+
+
+    <!-- ==================================================
+         BACK
+    ================================================== -->
+
+    <g
+        id="back"
+        class="tattoo-zone"
+        data-zone="Espalda"
+        tabindex="0"
+        role="button"
+        aria-label="Seleccionar espalda"
+    >
+
+        <path
+            d="
+                M225 145
+
+                C195 145
+                165 160
+                145 190
+
+                L165 315
+
+                C185 330
+                215 335
+                250 335
+
+                C285 335
+                315 330
+                335 315
+
+                L355 190
+
+                C335 160
+                305 145
+                275 145
+
+                Z
+            "
+            fill="url(#bodyGradientBack)"
+            stroke="#77716a"
+            stroke-width="2.5"
+        />
+
+        <path
+            d="
+                M250 155
+                L250 325
+            "
+            fill="none"
+            stroke="#55504a"
+            stroke-width="1"
+            opacity="0.35"
+            pointer-events="none"
+        />
+
+    </g>
+
+
+    <!-- ==================================================
+         LEFT ARM
+    ================================================== -->
+
+    <g
+        id="arm-left"
+        class="tattoo-zone"
+        data-zone="Brazo izquierdo"
+        tabindex="0"
+        role="button"
+        aria-label="Seleccionar brazo izquierdo"
+    >
+
+        <path
+            d="
+                M165 175
+
+                C140 185
+                122 205
+                110 235
+
+                L75 350
+
+                C70 370
+                75 390
+                90 400
+
+                C105 410
+                122 402
+                130 385
+
+                L175 275
+
+                L195 205
+
+                Z
+            "
+            fill="url(#bodyGradientBack)"
+            stroke="#77716a"
+            stroke-width="2.5"
+        />
+
+    </g>
+
+
+    <!-- ==================================================
+         RIGHT ARM
+    ================================================== -->
+
+    <g
+        id="arm-right"
+        class="tattoo-zone"
+        data-zone="Brazo derecho"
+        tabindex="0"
+        role="button"
+        aria-label="Seleccionar brazo derecho"
+    >
+
+        <path
+            d="
+                M335 175
+
+                C360 185
+                378 205
+                390 235
+
+                L425 350
+
+                C430 370
+                425 390
+                410 400
+
+                C395 410
+                378 402
+                370 385
+
+                L325 275
+
+                L305 205
+
+                Z
+            "
+            fill="url(#bodyGradientBack)"
+            stroke="#77716a"
+            stroke-width="2.5"
+        />
+
+    </g>
+
+
+    <!-- ==================================================
+         LEFT LEG
+    ================================================== -->
+
+    <g
+        id="leg-left"
+        class="tattoo-zone"
+        data-zone="Pierna izquierda"
+        tabindex="0"
+        role="button"
+        aria-label="Seleccionar pierna izquierda"
+    >
+
+        <path
+            d="
+                M175 315
+
+                C170 390
+                165 455
+                165 525
+
+                L160 755
+
+                C160 785
+                175 800
+                195 800
+
+                C215 800
+                225 785
+                225 760
+
+                L245 530
+
+                L250 335
+
+                Z
+            "
+            fill="url(#bodyGradientBack)"
+            stroke="#77716a"
+            stroke-width="2.5"
+        />
+
+    </g>
+
+
+    <!-- ==================================================
+         RIGHT LEG
+    ================================================== -->
+
+    <g
+        id="leg-right"
+        class="tattoo-zone"
+        data-zone="Pierna derecha"
+        tabindex="0"
+        role="button"
+        aria-label="Seleccionar pierna derecha"
+    >
+
+        <path
+            d="
+                M250 335
+
+                L255 530
+
+                L275 760
+
+                C275 785
+                285 800
+                305 800
+
+                C325 800
+                340 785
+                340 755
+
+                L335 525
+
+                C335 455
+                330 390
+                325 315
+
+                Z
+            "
+            fill="url(#bodyGradientBack)"
+            stroke="#77716a"
+            stroke-width="2.5"
+        />
+
+    </g>
+
+
+    <!-- ==================================================
+         INTERACTION
+    ================================================== -->
+
+    <style>
+
+        .tattoo-zone {
+
+            cursor: pointer;
+
+            transition:
+                fill 0.25s ease,
+                stroke 0.25s ease,
+                stroke-width 0.25s ease,
+                filter 0.25s ease,
+                opacity 0.25s ease;
+
+            transform-box: fill-box;
+            transform-origin: center;
+
+        }
+
+
+        .tattoo-zone:hover {
+
+            fill:
+                rgba(214,179,106,0.22);
+
+            stroke:
+                #d6b36a;
+
+            stroke-width:
+                3.5;
+
+            filter:
+                drop-shadow(
+                    0 0 7px
+                    rgba(214,179,106,0.35)
+                );
+
+        }
+
+
+        .tattoo-zone.selected {
+
+            fill:
+                url(#selectedGradientBack);
+
+            stroke:
+                #ead39b;
+
+            stroke-width:
+                4;
+
+            filter:
+                drop-shadow(
+                    0 0 10px
+                    rgba(214,179,106,0.48)
+                );
+
+        }
+
+
+        .tattoo-zone:focus {
+
+            outline:
+                none;
+
+        }
+
+
+        .tattoo-zone:focus-visible {
+
+            stroke:
+                #ead39b;
+
+            stroke-width:
+                4;
+
+        }
+
+    </style>
+
+</svg>

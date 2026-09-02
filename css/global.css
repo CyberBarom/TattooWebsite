@@ -1,0 +1,176 @@
+/* =====================================
+   RESET
+===================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =====================================
+   VARIABLES
+===================================== */
+
+:root {
+
+    --background: #090909;
+    --surface: #111111;
+    --surface-light: #171717;
+
+    --border: #292929;
+
+    --text: #f4f1ea;
+    --text-muted: #929292;
+
+    --accent: #d6b36a;
+    --accent-light: #ead39b;
+
+    --max-width: 1300px;
+}
+
+
+/* =====================================
+   BASE
+===================================== */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+
+    background: var(--background);
+
+    color: var(--text);
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    line-height: 1.5;
+}
+
+
+/* =====================================
+   LINKS
+===================================== */
+
+a {
+
+    color: inherit;
+
+    text-decoration: none;
+}
+
+
+/* =====================================
+   CONTAINER
+===================================== */
+
+.container {
+
+    width: min(
+        calc(100% - 40px),
+        var(--max-width)
+    );
+
+    margin-inline: auto;
+}
+
+
+/* =====================================
+   SECTION
+===================================== */
+
+.section {
+
+    width: min(
+        calc(100% - 40px),
+        var(--max-width)
+    );
+
+    margin-inline: auto;
+
+    padding-block: 120px;
+}
+
+
+/* =====================================
+   EYEBROW
+===================================== */
+
+.eyebrow {
+
+    display: block;
+
+    color: var(--accent);
+
+    text-transform: uppercase;
+
+    letter-spacing: 4px;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    margin-bottom: 24px;
+}
+
+
+/* =====================================
+   BUTTONS
+===================================== */
+
+.btn {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 16px 25px;
+
+    border-radius: 3px;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    transition: 0.25s ease;
+}
+
+
+.btn-primary {
+
+    background: var(--accent);
+
+    color: #111;
+}
+
+
+.btn-primary:hover {
+
+    background: var(--accent-light);
+
+    transform: translateY(-2px);
+}
+
+
+.btn-secondary {
+
+    border: 1px solid var(--border);
+
+    color: var(--text-muted);
+}
+
+
+.btn-secondary:hover {
+
+    border-color: var(--accent);
+
+    color: var(--text);
+}
